@@ -115,12 +115,38 @@ export function FallingIcons({ scope, triggerRef, floorSelector }) {
       activeRef.current = false;
       clearInterval(intervalRef.current);
     };
-    trigger.addEventListener('mouseenter', start);
-    trigger.addEventListener('mouseleave', stop);
+
+    const isTouch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+    let burstTimer = null;
+    let pauseTimer = null;
+    const runBurst = () => {
+      activeRef.current = true;
+      let n = 0;
+      burstTimer = setInterval(() => {
+        spawn();
+        n++;
+        if (n >= 5) {
+          clearInterval(burstTimer);
+          burstTimer = null;
+          activeRef.current = false;
+          pauseTimer = setTimeout(runBurst, 3200);
+        }
+      }, 180);
+    };
+    if (isTouch) {
+      pauseTimer = setTimeout(runBurst, 900);
+    } else {
+      trigger.addEventListener('mouseenter', start);
+      trigger.addEventListener('mouseleave', stop);
+    }
     return () => {
-      trigger.removeEventListener('mouseenter', start);
-      trigger.removeEventListener('mouseleave', stop);
+      if (!isTouch) {
+        trigger.removeEventListener('mouseenter', start);
+        trigger.removeEventListener('mouseleave', stop);
+      }
       stop();
+      if (burstTimer) clearInterval(burstTimer);
+      if (pauseTimer) clearTimeout(pauseTimer);
     };
   }, [scope, triggerRef, floorSelector]);
 

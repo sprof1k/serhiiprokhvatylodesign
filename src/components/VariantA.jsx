@@ -52,8 +52,8 @@ export function VariantA() {
         <div className="hero-text-group">
           <div className="mono-label hero-tag" style={{ marginBottom: 36 }}>{'/* portfolio · v.4 — '}{time}{' */'}</div>
           <h1 className="hero-title" style={{ fontFamily: 'var(--font-display)', fontSize: 86, lineHeight: 0.96, letterSpacing: '-0.04em', fontWeight: 500, margin: '0 0 36px', maxWidth: 1100 }}>
-            Serhii Prokhvatylo —<br />
-            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 300, fontSize: '1.08em' }}>product designer</span> who treats AI<br />
+            Serhii Prokhvatylo —<br />{' '}
+            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 300, fontSize: '1.08em' }}>product designer</span> who treats AI<br />{' '}
             like a partner, not a replacement.
           </h1>
         </div>
