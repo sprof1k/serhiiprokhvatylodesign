@@ -47,7 +47,7 @@ export function VariantA() {
 
       {/* hero */}
       <section className="hero-section" style={{ minHeight: '88vh', padding: '56px 32px 56px', borderBottom: '1px solid var(--line)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-        <ParallaxPortrait src="/assets/serhii-photo.png" scope={scrollRef} side="right" innerRef={portraitRef} />
+        <ParallaxPortrait src="/assets/serhii-photo.jpg" scope={scrollRef} side="right" innerRef={portraitRef} />
         <FallingIcons scope={scrollRef} triggerRef={portraitRef} floorSelector=".marquee-section" />
         <div className="hero-text-group">
           <div className="mono-label hero-tag" style={{ marginBottom: 36 }}>{'/* portfolio · v.4 — '}{time}{' */'}</div>
@@ -157,7 +157,7 @@ I've collaborated with companies across the US and Europe — from AI startups a
           </div>
         </div>
         <div className="footer-bottom">
-          <span className="footer-name">Serhii.Prokhvatylo</span>
+          <span className="footer-name">Serhii.<br className="footer-name-break" />Prokhvatylo</span>
           <span className="footer-year">©2026</span>
         </div>
       </section>

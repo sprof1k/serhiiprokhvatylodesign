@@ -61,7 +61,7 @@ export function ScrollReveal({ children: render }) {
   }, []);
 
   return (
-    <section ref={ref} style={{ position: 'relative', height: '220vh', borderBottom: '1px solid var(--line)' }}>
+    <section ref={ref} style={{ position: 'relative', height: '340vh', borderBottom: '1px solid var(--line)' }}>
       <div style={{
         position: 'sticky', top: 0, height: '100vh',
         display: 'flex', flexDirection: 'column',

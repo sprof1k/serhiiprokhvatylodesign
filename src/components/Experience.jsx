@@ -59,7 +59,16 @@ export function ExperienceSection({ items }) {
             >
               <div className="mono-label">{e.period}</div>
               <div>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, lineHeight: 1.1, fontWeight: 500, letterSpacing: '-0.02em' }}>{e.company}</div>
+                <div className="exp-logo-mobile" aria-hidden="true">
+                  {e.logo ? (
+                    <img src={e.logo} alt="" />
+                  ) : (
+                    <div className="exp-logo-fallback" style={{ background: e.accent }}>
+                      <span>{e.company}</span>
+                    </div>
+                  )}
+                </div>
+                <div className="exp-company" style={{ fontFamily: 'var(--font-display)', fontSize: 28, lineHeight: 1.1, fontWeight: 500, letterSpacing: '-0.02em' }}>{e.company}</div>
                 <div className="mono-label" style={{ marginTop: 8 }}>{e.role}</div>
               </div>
               <div style={{ fontSize: 14, color: 'var(--ink-2)', lineHeight: 1.6, maxWidth: 560 }}>{e.desc}</div>

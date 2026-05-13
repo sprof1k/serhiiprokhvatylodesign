@@ -22,15 +22,50 @@ const PILL_LAYOUT = [
 
 export function FeaturedProject() {
   const sectionRef = useRef(null);
+  const pillStripRef = useRef(null);
   const [active, setActive] = useState(0);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
+
+  // Auto-rotate every 3s on mobile
+  useEffect(() => {
+    const mql = window.matchMedia('(max-width: 720px)');
+    let id = null;
+    const start = () => {
+      stop();
+      id = setInterval(() => setActive(a => (a + 1) % SCREENS.length), 3000);
+    };
+    const stop = () => { if (id) { clearInterval(id); id = null; } };
+    const sync = () => { mql.matches ? start() : stop(); };
+    sync();
+    mql.addEventListener ? mql.addEventListener('change', sync) : mql.addListener(sync);
+    return () => {
+      stop();
+      mql.removeEventListener ? mql.removeEventListener('change', sync) : mql.removeListener(sync);
+    };
+  }, []);
+
+  // Keep active pill in view on the mobile strip
+  useEffect(() => {
+    const strip = pillStripRef.current;
+    if (!strip) return;
+    const el = strip.querySelector(`[data-idx="${active}"]`);
+    if (el && strip.offsetParent !== null) {
+      const sLeft = strip.scrollLeft;
+      const sRight = sLeft + strip.clientWidth;
+      const eLeft = el.offsetLeft;
+      const eRight = eLeft + el.offsetWidth;
+      if (eLeft < sLeft + 12 || eRight > sRight - 12) {
+        strip.scrollTo({ left: eLeft - 24, behavior: 'smooth' });
+      }
+    }
+  }, [active]);
 
   useEffect(() => {
     const root = sectionRef.current;
     if (!root) return;
     let raf, tx = 0, ty = 0, cx = 0, cy = 0;
     const isTouch = window.matchMedia && window.matchMedia('(hover: none)').matches;
-    let t0 = performance.now();
+    const t0 = performance.now();
 
     const move = (e) => {
       const r = root.getBoundingClientRect();
@@ -105,7 +140,7 @@ export function FeaturedProject() {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-        {/* soft white glow behind the phone */}
+        {/* soft white glow */}
         <div aria-hidden="true" style={{
           position: 'absolute',
           top: '50%', left: '50%',
@@ -124,7 +159,7 @@ export function FeaturedProject() {
           height: 670,
           borderRadius: 46,
           background: '#0e1116',
-          border: '8px solid #0e0e0c',
+          border: '4px solid var(--phone-bezel)',
           boxShadow: '0 30px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05)',
           zIndex: 2,
           overflow: 'hidden',
@@ -133,30 +168,23 @@ export function FeaturedProject() {
           transition: 'transform .15s ease-out',
         }}>
           {SCREENS.map((s, i) => (
-            <img
-              key={i}
-              src={s.img}
-              alt={s.label}
-              style={{
-                position: 'absolute', inset: 0,
-                width: '100%', height: '100%',
-                objectFit: 'cover',
-                opacity: active === i ? 1 : 0,
-                transition: 'opacity .45s ease',
-              }}
-            />
+            <img key={i} src={s.img} alt={s.label} style={{
+              position: 'absolute', inset: 0,
+              width: '100%', height: '100%',
+              objectFit: 'cover',
+              opacity: active === i ? 1 : 0,
+              transition: 'opacity .45s ease',
+            }} />
           ))}
         </div>
 
-        {/* pills floating around — parallax */}
+        {/* floating pills — desktop only (hidden on mobile via CSS) */}
         {PILL_LAYOUT.map((p, i) => {
           const screen = SCREENS[i];
           if (!screen) return null;
           const px = mouse.x * 10 * p.depth * (p.side === 'left' ? -1 : 1);
           const py = mouse.y * 6 * p.depth;
-          const positionStyle = p.side === 'left'
-            ? { left: `${p.offset}%` }
-            : { right: `${p.offset}%` };
+          const positionStyle = p.side === 'left' ? { left: `${p.offset}%` } : { right: `${p.offset}%` };
           return (
             <button
               key={i}
@@ -190,31 +218,30 @@ export function FeaturedProject() {
         })}
       </div>
 
-      {/* body copy below */}
-      <div className="featured-copy" style={{
-        maxWidth: 720,
-        margin: '64px auto 0',
-        textAlign: 'center',
-      }}>
-        <p style={{
-          fontFamily: 'var(--font-sans)',
-          fontSize: 16,
-          lineHeight: 1.65,
-          color: 'var(--ink-2)',
-          margin: '0 0 14px',
-        }}>
+      {/* mobile-only horizontal pill strip */}
+      <div className="featured-pills-mobile" ref={pillStripRef}>
+        {SCREENS.map((s, i) => (
+          <button
+            key={i}
+            data-idx={i}
+            data-active={active === i}
+            className="featured-pill-m"
+            onClick={() => setActive(i)}
+          >
+            {s.label}
+          </button>
+        ))}
+      </div>
+
+      {/* body copy */}
+      <div className="featured-copy" style={{ maxWidth: 720, margin: '64px auto 0', textAlign: 'center' }}>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 16, lineHeight: 1.65, color: 'var(--ink-2)', margin: '0 0 14px' }}>
           Vera Health is an AI-powered clinical companion that helps physicians
           capture, review and act on patient context in seconds — not minutes.
           The product had to feel calm, accurate and quietly competent in
           high-stakes environments.
         </p>
-        <p style={{
-          fontFamily: 'var(--font-sans)',
-          fontSize: 16,
-          lineHeight: 1.65,
-          color: 'var(--ink-2)',
-          margin: 0,
-        }}>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 16, lineHeight: 1.65, color: 'var(--ink-2)', margin: 0 }}>
           My role spanned product strategy, IA, interaction design and the
           visual system — from first sketches to live shifts in three hospitals.
         </p>
