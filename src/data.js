@@ -7,6 +7,7 @@ export const PROJECTS = [
     metric: 'Used in 1 200+ shifts',
     image: '/assets/case-vera.png',
     color: 'oklch(0.92 0.02 240)',
+    link: '/vera-health.html',
   },
   {
     id: '02', year: '2024', client: 'SP Cars',

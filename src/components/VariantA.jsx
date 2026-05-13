@@ -93,7 +93,11 @@ export function VariantA() {
         <div className="work-grid" style={{ columnCount: 2, columnGap: 8 }}>
           {PROJECTS.map((p, i) => (
             <Reveal key={p.id} delay={i * 80} root={scrollRef}>
-              <article style={{ cursor: 'pointer', breakInside: 'avoid', marginBottom: 8, display: 'block' }} data-cursor="open">
+              <article
+                style={{ cursor: 'pointer', breakInside: 'avoid', marginBottom: 8, display: 'block' }}
+                data-cursor="open"
+                onClick={() => p.link && (window.location.href = p.link)}
+              >
                 <Placeholder className="work-card-img" label={p.client} color={p.color} aspect="16/10" image={p.image} />
                 <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 16, alignItems: 'baseline', margin: '14px 0 18px' }}>
                   <span className="mono-label">{p.id}</span>
