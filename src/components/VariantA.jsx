@@ -30,7 +30,7 @@ export function VariantA() {
     <div ref={scrollRef} style={{ width: '100%', minHeight: '100vh', background: 'transparent', color: 'var(--ink)', position: 'relative' }}>
       {/* nav */}
       <header className="site-header" style={{ position: 'sticky', top: 0, zIndex: 10, background: 'var(--bg)', borderBottom: '1px solid var(--line)' }}>
-        <div className="nav-row" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', padding: '14px 32px 14px 32px', paddingRight: 130, gap: 24 }}>
+        <div className="nav-row" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', padding: '14px 32px 14px 32px', paddingRight: 170, gap: 24 }}>
           <div className="nav-status" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <div style={{ width: 8, height: 8, background: 'oklch(0.7 0.18 145)', borderRadius: '50%' }} />
             <span className="mono-label">Available · Q1 2026</span>
@@ -55,7 +55,7 @@ export function VariantA() {
           <div className="mono-label hero-tag" style={{ marginBottom: 36 }}>{'/* portfolio · v.4 — '}{time}{' */'}</div>
           <h1 className="hero-title" style={{ fontFamily: 'var(--font-display)', fontSize: 86, lineHeight: 0.96, letterSpacing: '-0.04em', fontWeight: 500, margin: '0 0 36px', maxWidth: 1100 }}>
             Serhii Prokhvatylo —<br />{' '}
-            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 300, fontSize: '1.08em' }}>product designer</span> who treats AI<br />{' '}
+            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, fontSize: '1.08em' }}>product designer</span> who treats AI<br />{' '}
             like a partner, not a replacement.
           </h1>
         </div>
