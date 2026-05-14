@@ -6,6 +6,7 @@ import { ServicesSection } from './Services';
 import { MarqueePills } from './Marquee';
 import { FallingIcons } from './FallingIcons';
 import { FeaturedProject } from './Featured';
+import { ThemeToggle } from './ThemeToggle';
 import { PROJECTS, EXPERIENCE, SERVICES } from '../data';
 
 export function VariantA() {
@@ -30,9 +31,10 @@ export function VariantA() {
       {/* nav */}
       <header className="site-header" style={{ position: 'sticky', top: 0, zIndex: 10, background: 'var(--bg)', borderBottom: '1px solid var(--line)' }}>
         <div className="nav-row" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', padding: '14px 32px 14px 32px', paddingRight: 130, gap: 24 }}>
-          <div className="nav-status" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div className="nav-status" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <div style={{ width: 8, height: 8, background: 'oklch(0.7 0.18 145)', borderRadius: '50%' }} />
             <span className="mono-label">Available · Q1 2026</span>
+            <ThemeToggle />
           </div>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.04em' }}>SP / DESIGN</div>
           <div className="nav-links" style={{ display: 'flex', justifyContent: 'flex-end', gap: 18 }}>

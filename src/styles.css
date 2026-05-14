@@ -88,18 +88,43 @@ body {
 /* Sections + page content sit above the grid */
 .page { position: relative; z-index: 2; }
 
-/* Theme toggle */
-.theme-toggle {
-  position: fixed; top: 16px; right: 20px; z-index: 50;
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.04em; text-transform: uppercase;
-  color: var(--ink); background: var(--bg);
-  border: 1px solid var(--line); padding: 7px 12px;
-  cursor: pointer; transition: background .2s, color .2s, border-color .2s;
+/* Theme switch — 3-option segmented control (system / light / dark) */
+.theme-switch {
+  appearance: none; background: transparent; border: none; padding: 0;
+  display: inline-flex; align-items: center; gap: 0;
+  margin: 0;
 }
-.theme-toggle:hover { background: var(--ink); color: var(--bg); }
-.theme-toggle .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+.theme-switch__group {
+  display: inline-flex; align-items: center;
+  padding: 3px;
+  gap: 2px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.theme-switch__btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  width: 26px; height: 26px;
+  border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+.theme-switch__btn:hover { color: var(--ink); }
+.theme-switch__btn svg { width: 14px; height: 14px; display: block; }
+.theme-switch__btn[aria-pressed="true"] {
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.18), 0 0 0 1px var(--line);
+}
+[data-theme="light"] .theme-switch__btn[aria-pressed="true"] {
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 0 0 1px var(--line);
+}
 
 /* Hide vertical site grid on experience section */
 .experience-section { isolation: isolate; }
@@ -320,7 +345,9 @@ body {
 @media (max-width: 720px) {
   .site-grid { display: none !important; }
 
-  .theme-toggle { top: 12px; right: 12px; padding: 6px 10px; font-size: 10px; }
+  .theme-switch__group { padding: 2px; gap: 0; }
+  .theme-switch__btn { width: 24px; height: 24px; }
+  .theme-switch__btn svg { width: 12px; height: 12px; }
 
   .nav-row {
     grid-template-columns: 1fr auto !important;
