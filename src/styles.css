@@ -37,7 +37,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; overflow-x: clip; }
+html, body { margin: 0; padding: 0; overflow-x: clip; max-width: 100%; }
 body {
   font-family: var(--font-sans);
   color: var(--ink);
@@ -221,14 +221,14 @@ body {
 .exp-logo-mobile {
   display: none;
   width: 70px; height: 70px;
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
 }
 .exp-logo-mobile img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .exp-logo-fallback {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
-  border-radius: 16px;
+  border-radius: 14px;
   font-family: var(--font-display); color: #fff;
   font-size: 13px; font-weight: 600;
   letter-spacing: -0.02em;
@@ -466,10 +466,8 @@ body {
   .featured-phone {
     width: min(221px, 59.5vw) !important;
     height: auto !important;
-    aspect-ratio: 320 / 670 !important;
+    aspect-ratio: 440 / 916 !important;
     transform: none !important;
-    border-width: 3px !important;
-    border-radius: 32px !important;
   }
   .featured-pill { display: none !important; }
   .featured-pills-mobile { display: flex !important; }

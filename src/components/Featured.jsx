@@ -4,20 +4,24 @@ const SCREENS = [
   { label: 'Home',           img: '/assets/screen-home.png' },
   { label: 'Authentication', img: '/assets/screen-authentication.png' },
   { label: 'Thinking',      img: '/assets/screen-thinking.png' },
+  { label: 'Result',        img: '/assets/screen-result.png' },
   { label: 'References',    img: '/assets/screen-references.png' },
   { label: 'Calculator',    img: '/assets/screen-calculator.png' },
   { label: 'Setting Up',    img: '/assets/screen-setting-up.png' },
+  { label: 'Notifications', img: '/assets/screen-notifications.png' },
   { label: 'New Device',    img: '/assets/screen-new-device.png' },
 ];
 
 const PILL_LAYOUT = [
-  { top: 8,  side: 'left',  offset: 14, depth: 1.0 },
-  { top: 22, side: 'right', offset: 6,  depth: 0.6 },
-  { top: 36, side: 'left',  offset: 4,  depth: 0.4 },
-  { top: 50, side: 'right', offset: 18, depth: 1.0 },
-  { top: 64, side: 'left',  offset: 10, depth: 0.8 },
-  { top: 78, side: 'right', offset: 4,  depth: 0.5 },
-  { top: 90, side: 'left',  offset: 20, depth: 1.1 },
+  { top: 6,  side: 'left',  offset: 14, depth: 1.0 },
+  { top: 17, side: 'right', offset: 6,  depth: 0.6 },
+  { top: 28, side: 'left',  offset: 4,  depth: 0.4 },
+  { top: 39, side: 'right', offset: 18, depth: 1.0 },
+  { top: 50, side: 'left',  offset: 10, depth: 0.8 },
+  { top: 61, side: 'right', offset: 4,  depth: 0.5 },
+  { top: 72, side: 'left',  offset: 20, depth: 1.1 },
+  { top: 83, side: 'right', offset: 10, depth: 0.7 },
+  { top: 92, side: 'left',  offset: 6,  depth: 0.9 },
 ];
 
 export function FeaturedProject() {
@@ -127,7 +131,7 @@ export function FeaturedProject() {
         zIndex: 1,
       }}>
         An AI clinical assistant<br />
-        <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 300, fontSize: '1.08em' }}>doctors actually trust.</span>
+        <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, fontSize: '1.08em' }}>doctors actually trust.</span>
       </h2>
 
       {/* phone + floating pills */}
@@ -152,30 +156,53 @@ export function FeaturedProject() {
           zIndex: 1,
         }} />
 
-        {/* phone silhouette */}
+        {/* iPhone SVG mockup with real screens inside */}
         <div className="featured-phone" style={{
           position: 'relative',
           width: 320,
-          height: 670,
-          borderRadius: 46,
-          background: '#0e1116',
-          border: '4px solid var(--phone-bezel)',
-          boxShadow: '0 30px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05)',
+          aspectRatio: '440 / 916',
           zIndex: 2,
-          overflow: 'hidden',
           flexShrink: 0,
           transform: `translate3d(${mouse.x * 8}px, ${mouse.y * 5}px, 0)`,
           transition: 'transform .15s ease-out',
+          filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.45))',
+          containerType: 'inline-size',
         }}>
-          {SCREENS.map((s, i) => (
-            <img key={i} src={s.img} alt={s.label} style={{
+          {/* screen images masked to the screen area inside the bezel */}
+          <div style={{
+            position: 'absolute',
+            top: '2.293%',
+            left: '4.318%',
+            width: '91.364%',
+            height: '95.415%',
+            borderRadius: '12.95cqi',
+            overflow: 'hidden',
+            background: '#000',
+            zIndex: 1,
+          }}>
+            {SCREENS.map((s, i) => (
+              <img key={i} src={s.img} alt={s.label} style={{
+                position: 'absolute', inset: 0,
+                width: '100%', height: '100%',
+                objectFit: 'cover',
+                opacity: active === i ? 1 : 0,
+                transition: 'opacity .45s ease',
+              }} />
+            ))}
+          </div>
+          {/* iPhone 17 Pro bezel overlay */}
+          <img
+            src="/assets/iphone-mockup.svg"
+            alt=""
+            aria-hidden="true"
+            style={{
               position: 'absolute', inset: 0,
               width: '100%', height: '100%',
-              objectFit: 'cover',
-              opacity: active === i ? 1 : 0,
-              transition: 'opacity .45s ease',
-            }} />
-          ))}
+              pointerEvents: 'none',
+              zIndex: 2,
+              userSelect: 'none',
+            }}
+          />
         </div>
 
         {/* floating pills — desktop only (hidden on mobile via CSS) */}
@@ -245,7 +272,7 @@ export function FeaturedProject() {
           My role spanned product strategy, IA, interaction design and the
           visual system — from first sketches to live shifts in three hospitals.
         </p>
-        <a href="#" className="under" style={{ display: 'inline-block', marginTop: 28, fontFamily: 'var(--font-mono)', fontSize: 13 }}>
+        <a href="/vera-health.html" className="under" style={{ display: 'inline-block', marginTop: 28, fontFamily: 'var(--font-mono)', fontSize: 13 }}>
           Read the case study →
         </a>
       </div>
