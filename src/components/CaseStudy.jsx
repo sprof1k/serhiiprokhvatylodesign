@@ -7,22 +7,30 @@ const TEAM = [
   { initials: 'MC', name: 'Marina Costa',       role: 'Product Manager',        accent: 'oklch(0.62 0.12 150)' },
 ];
 
+const META = [
+  { label: 'Client',   value: 'Vera Health',          sub: 'Boston · SF · Berlin' },
+  { label: 'My Role',  value: 'Lead Product Designer', sub: 'Strategy · IA · UI · Motion' },
+  { label: 'Timeline', value: '4 months',              sub: 'Aug — Dec 2024' },
+  { label: 'Industry', value: 'Healthcare / AI',       sub: 'Clinical decision support' },
+];
+
 const CORE_PROBLEMS = [
-  'Fragmented medical information',
-  'Time-consuming clinical decision-making',
-  'High cognitive load during patient evaluation',
-  'Risk of missed or outdated guidelines',
+  'Fragmented medical information across half a dozen tools',
+  'Time-consuming clinical decision-making under pressure',
+  'High cognitive load during patient evaluation at 3am',
+  'Risk of missed or outdated treatment guidelines',
 ];
 
 const BUSINESS_GOALS = [
-  'Reduce time to clinical decision',
-  'Increase adoption among medical professionals',
-  'Build trust in AI-assisted recommendations',
+  'Reduce time from triage to first documented action',
+  'Increase weekly active adoption among attending physicians',
+  'Build trust in AI-assisted recommendations with visible reasoning',
 ];
+
 const USER_GOALS = [
-  'Get clear, structured answers fast',
-  'Understand why a recommendation is given',
-  'Access trusted medical sources instantly',
+  'Get clear, structured answers in seconds',
+  'Understand why a recommendation is being made',
+  'Access trusted, up-to-date medical sources without context-switching',
 ];
 
 const PHASES = [
@@ -38,6 +46,15 @@ const OUTCOMES = [
   { stat: '94%', label: 'Physician satisfaction', detail: 'Of 87 surveyed clinicians after 30 days of daily use on shift.' },
 ];
 
+const NEXT = {
+  idx: '02 / 04',
+  year: '2024',
+  client: 'SP Cars',
+  title: 'Local taxi for Mukachevo, rebuilt from scratch',
+  image: '/assets/case-spcars.png',
+  href: '#',
+};
+
 function Avatar({ a, size = 40 }) {
   return (
     <div className="cs-avatar" style={{ background: a.accent, width: size, height: size }}>
@@ -46,9 +63,18 @@ function Avatar({ a, size = 40 }) {
   );
 }
 
+function SectionEyebrow({ idx, name, chapter }) {
+  return (
+    <div className="cs2-eyebrow">
+      <span className="mono-label">[ {idx} · {name} ]</span>
+      <span className="mono-label">{chapter}</span>
+    </div>
+  );
+}
+
 export function CaseStudy() {
   return (
-    <div className="case-study">
+    <div className="case-study cs2">
       {/* header */}
       <header className="site-header cs-header" style={{ position: 'sticky', top: 0, zIndex: 10, borderBottom: '1px solid var(--line)' }}>
         <div className="nav-row cs-nav-row">
@@ -64,26 +90,28 @@ export function CaseStudy() {
         </div>
       </header>
 
-      {/* hero */}
-      <section className="cs-hero">
-        <div className="cs-hero-meta">
-          <span className="mono-label">[ Case Study · 01 ]</span>
+      {/* 1. Hero — text only, editorial */}
+      <section className="cs2-hero">
+        <div className="cs2-hero-top">
+          <span className="mono-label">[ Case Study 01 · Vera Health ]</span>
+          <span className="mono-label">Healthcare · AI · iOS</span>
           <span className="mono-label">2024 — Q4</span>
-          <span className="mono-label">Vera Health</span>
         </div>
 
-        <h1 className="cs-headline">
-          An AI <span className="serif-it">clinical</span> assistant <span className="serif-it">doctors actually</span> trust.
+        <h1 className="cs2-headline">
+          An AI <span className="serif-it">clinical</span> assistant
+          <br />
+          <span className="serif-it">doctors actually</span> trust.
         </h1>
 
-        <div className="cs-hero-foot">
-          <p className="cs-hero-lede">
+        <div className="cs2-hero-foot">
+          <p className="cs2-hero-lede">
             Vera Health is an AI-powered clinical companion that helps physicians capture,
             review and act on patient context in seconds — not minutes. I led the redesign
             from a friction-heavy prototype to a calm, opinionated product running live in
             three hospitals.
           </p>
-          <div className="cs-hero-cta">
+          <div className="cs2-hero-actions">
             <a className="cs-cta" href="#">
               View live product <span aria-hidden="true">↗</span>
             </a>
@@ -94,49 +122,65 @@ export function CaseStudy() {
         </div>
       </section>
 
-      {/* meta info: role / timeline / team */}
-      <section className="cs-context">
-        <div className="cs-context-col">
-          <div className="mono-label">My Role</div>
-          <div className="cs-context-value">Lead Product Designer</div>
-          <div className="mono-label cs-context-sub">Strategy · IA · UI · Motion</div>
-        </div>
-        <div className="cs-context-col">
-          <div className="mono-label">Timeline</div>
-          <div className="cs-context-value">4 months</div>
-          <div className="mono-label cs-context-sub">Aug — Dec 2024</div>
-        </div>
-        <div className="cs-context-col cs-context-col--team">
-          <div className="mono-label">Team</div>
-          <div className="cs-team-row">
-            {TEAM.map((t) => (
-              <div key={t.name} className="cs-team-member">
-                <Avatar a={t} />
-                <div>
-                  <div className="cs-team-name">{t.name}</div>
-                  <div className="mono-label cs-team-role">{t.role}</div>
-                </div>
-              </div>
-            ))}
+      {/* 2. Full-bleed showcase image */}
+      <section className="cs2-fullbleed cs2-fullbleed--hero" aria-label="Vera Health flagship visual">
+        <img src="/assets/vera-1.png" alt="Vera Health — patient dashboard, full product view" loading="eager" decoding="async" />
+      </section>
+
+      {/* 3. Meta strip */}
+      <section className="cs2-meta-strip">
+        {META.map((m) => (
+          <div key={m.label} className="cs2-meta-cell">
+            <div className="mono-label">{m.label}</div>
+            <div className="cs2-meta-value">{m.value}</div>
+            <div className="mono-label cs2-meta-sub">{m.sub}</div>
+          </div>
+        ))}
+      </section>
+
+      {/* 4. Overview */}
+      <section className="cs2-section cs2-overview">
+        <SectionEyebrow idx="01" name="Overview" chapter="Context" />
+        <div className="cs2-overview-body">
+          <h2 className="cs2-section-title">
+            A product for the <span className="serif-it">hardest twenty seconds</span> of a doctor's day.
+          </h2>
+          <div className="cs2-prose">
+            <p>
+              Vera Health entered the redesign with a working prototype but a stalling product:
+              physicians used it once, then routed back to the tools they already trusted. Adoption
+              was the surface symptom — the deeper issue was that the interface asked clinicians to
+              read like an engineer at exactly the moments they needed to think like a doctor.
+            </p>
+            <p>
+              Over four months I led the team through discovery in two teaching hospitals, a
+              redefined product surface, and a relentless run of low-fi to hi-fi iteration with
+              two attending physicians in the room. The shipping target wasn't a feature list. It
+              was a single sentence: <em>a doctor at 3am can trust this in one glance.</em>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 01 · The Problem */}
-      <section className="cs-section">
-        <div className="cs-section-head">
-          <span className="mono-label">[ 01 · The Problem ]</span>
-          <span className="mono-label">Discovery</span>
-        </div>
-        <h2 className="cs-section-title">The problem</h2>
+      {/* 5. The Problem */}
+      <section className="cs2-section">
+        <SectionEyebrow idx="02" name="The Problem" chapter="Discovery" />
+        <h2 className="cs2-section-title">
+          Information was everywhere. <span className="serif-it">Decisions were nowhere.</span>
+        </h2>
 
         <div className="cs-twocol">
           <div className="cs-twocol-col">
             <h3 className="cs-sub-label">Context</h3>
             <p className="cs-body">
-              Doctors operate under time pressure and information overload. Accessing
-              up-to-date clinical guidelines, drug interactions, and treatment
-              recommendations often requires switching between multiple tools.
+              Doctors operate under time pressure and information overload. Accessing up-to-date
+              clinical guidelines, drug interactions and treatment recommendations often requires
+              switching between four to six separate tools — most of them designed in different
+              decades, for different jobs.
+            </p>
+            <p className="cs-body" style={{ marginTop: 14 }}>
+              The cost is paid in attention. Every context switch is a chance for a missed dose,
+              a stale guideline, a charted note that never makes it to the next clinician.
             </p>
           </div>
           <div className="cs-twocol-col">
@@ -148,24 +192,17 @@ export function CaseStudy() {
         </div>
       </section>
 
-      {/* Image trio: left tall, right two stacked */}
-      <section className="cs-image-trio" aria-label="Vera Health product visuals">
-        <div className="cs-trio-left">
-          <img src="/assets/vera-1.png" alt="Vera Health home — patient dashboard" />
-        </div>
-        <div className="cs-trio-right">
-          <img src="/assets/vera-2.png" alt="Vera Health reasoning and clinical calculator views" />
-          <img src="/assets/vera-3.png" alt="Vera Health flows across three devices" />
-        </div>
+      {/* 6. Full-bleed image */}
+      <section className="cs2-fullbleed" aria-label="Vera Health — reasoning and clinical calculator views">
+        <img src="/assets/vera-4.png" alt="Vera Health — clinical calculator and Discover feed" loading="lazy" decoding="async" />
       </section>
 
-      {/* 02 · Goals & Success Criteria */}
-      <section className="cs-section">
-        <div className="cs-section-head">
-          <span className="mono-label">[ 02 · Goals &amp; Success Criteria ]</span>
-          <span className="mono-label">Definition</span>
-        </div>
-        <h2 className="cs-section-title">Goals &amp; Success Criteria</h2>
+      {/* 7. Goals */}
+      <section className="cs2-section">
+        <SectionEyebrow idx="03" name="Goals & Success" chapter="Definition" />
+        <h2 className="cs2-section-title">
+          One brief. <span className="serif-it">Two audiences.</span> Same north star.
+        </h2>
 
         <div className="cs-twocol">
           <div className="cs-twocol-col">
@@ -183,18 +220,23 @@ export function CaseStudy() {
         </div>
       </section>
 
-      {/* Image 4 — wide product still */}
-      <section className="cs-image-full" aria-label="Vera Health — Wells Criteria and Discover">
-        <img src="/assets/vera-4.png" alt="Vera Health — clinical calculator and Discover feed" />
+      {/* 8. Image trio */}
+      <section className="cs2-trio-section">
+        <div className="cs-image-trio">
+          <div className="cs-trio-left">
+            <img src="/assets/vera-2.png" alt="Vera Health home — patient dashboard" loading="lazy" decoding="async" />
+          </div>
+          <div className="cs-trio-right">
+            <img src="/assets/vera-3.png" alt="Vera Health reasoning view" loading="lazy" decoding="async" />
+            <img src="/assets/vera-5.png" alt="Vera Health flows across three devices" loading="lazy" decoding="async" />
+          </div>
+        </div>
       </section>
 
-      {/* 03 · The Approach */}
-      <section className="cs-section">
-        <div className="cs-section-head">
-          <span className="mono-label">[ 03 · The Approach ]</span>
-          <span className="mono-label">Process</span>
-        </div>
-        <h2 className="cs-section-title">
+      {/* 9. The Approach */}
+      <section className="cs2-section">
+        <SectionEyebrow idx="04" name="The Approach" chapter="Process" />
+        <h2 className="cs2-section-title">
           Four phases. Two hospitals shadowed. <span className="serif-it">No assumptions left unchecked.</span>
         </h2>
         <div className="cs-phases">
@@ -208,14 +250,15 @@ export function CaseStudy() {
         </div>
       </section>
 
-      {/* Pull quote */}
-      <section className="cs-quote">
-        <p className="cs-quote-text">
+      {/* 10. Pull quote */}
+      <section className="cs2-quote">
+        <span className="mono-label cs2-quote-tag">[ Client · 30 days post-launch ]</span>
+        <p className="cs2-quote-text">
           "Serhii's first round of sketches understood our world better than three previous
           vendors put together. By week eight he'd shipped something my residents quietly
           started <em>preferring</em> over the old chart system."
         </p>
-        <div className="cs-quote-att">
+        <div className="cs2-quote-att">
           <Avatar a={{ initials: 'RV', accent: 'oklch(0.62 0.14 38)' }} size={48} />
           <div>
             <div className="cs-team-name">Dr. Rebecca Voss</div>
@@ -224,44 +267,51 @@ export function CaseStudy() {
         </div>
       </section>
 
-      {/* 04 · The Solution */}
-      <section className="cs-section cs-solution">
-        <div className="cs-section-head">
-          <span className="mono-label">[ 04 · The Solution ]</span>
-          <span className="mono-label">Shipping</span>
-        </div>
-        <h2 className="cs-section-title">
-          A <span className="serif-it">quietly competent</span> interface that does its homework in the background.
+      {/* 11. Solution */}
+      <section className="cs2-section">
+        <SectionEyebrow idx="05" name="The Solution" chapter="Shipping" />
+        <h2 className="cs2-section-title">
+          A <span className="serif-it">quietly competent</span> interface
+          <br />
+          that does its homework in the background.
         </h2>
 
         <div className="cs-solution-split">
           <figure className="cs-solution-image">
-            <img src="/assets/vera-5.png" alt="Vera Health — reasoning view shown in-hand" />
+            <img src="/assets/vera-5.png" alt="Vera Health — reasoning view shown in-hand" loading="lazy" decoding="async" />
           </figure>
           <div className="cs-solution-copy">
             <h3 className="cs-sub-label">Reasoned, not generated</h3>
             <p className="cs-body">
-              Every recommendation is paired with the clinical guideline that produced it,
-              inline citations, and a visible reasoning trace — so physicians can confirm
-              in seconds why the system suggested what it did.
+              Every recommendation is paired with the clinical guideline that produced it, inline
+              citations, and a visible reasoning trace — so physicians can confirm in seconds why
+              the system suggested what it did.
             </p>
             <h3 className="cs-sub-label" style={{ marginTop: 28 }}>One-glance legibility</h3>
             <p className="cs-body">
-              The reading hierarchy is built for tired eyes at 3am: short answer first,
-              supporting context next, source review one tap away. Calculators and drug
-              checks sit alongside the chat, not buried behind it.
+              The reading hierarchy is built for tired eyes at 3am: short answer first, supporting
+              context next, source review one tap away. Calculators and drug checks sit alongside
+              the chat, not buried behind it.
+            </p>
+            <h3 className="cs-sub-label" style={{ marginTop: 28 }}>Calm by default</h3>
+            <p className="cs-body">
+              The whole product runs in a low-saturation palette with a single warm accent. Alerts
+              are reserved for the few moments that genuinely need them — everything else stays out
+              of the way.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 05 · Outcome */}
-      <section className="cs-section">
-        <div className="cs-section-head">
-          <span className="mono-label">[ 05 · Outcome ]</span>
-          <span className="mono-label">30-day post-launch</span>
-        </div>
-        <h2 className="cs-section-title">
+      {/* 12. Full-bleed close */}
+      <section className="cs2-fullbleed" aria-label="Vera Health — final product still">
+        <img src="/assets/vera-2.png" alt="Vera Health — final shipping product still" loading="lazy" decoding="async" />
+      </section>
+
+      {/* 13. Outcome */}
+      <section className="cs2-section">
+        <SectionEyebrow idx="06" name="Outcome" chapter="30-day post-launch" />
+        <h2 className="cs2-section-title">
           The numbers stopped being the story. <span className="serif-it">The shifts did.</span>
         </h2>
         <div className="cs-outcome-grid">
@@ -273,20 +323,41 @@ export function CaseStudy() {
             </div>
           ))}
         </div>
+
+        <div className="cs2-team-credit">
+          <div className="mono-label cs2-team-credit-label">Built with</div>
+          <div className="cs2-team-row">
+            {TEAM.map((t) => (
+              <div key={t.name} className="cs-team-member">
+                <Avatar a={t} />
+                <div>
+                  <div className="cs-team-name">{t.name}</div>
+                  <div className="mono-label cs-team-role">{t.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* CTA */}
-      <section className="cs-cta-section">
-        <span className="mono-label">[ Next ]</span>
-        <h2 className="cs-cta-headline">
-          Have a hard product problem? <span className="serif-it">Let's talk.</span>
-        </h2>
-        <a className="cs-cta cs-cta--big" href="mailto:sprof1k20@gmail.com">
-          sprof1k20@gmail.com <span aria-hidden="true">↗</span>
-        </a>
-        <div className="cs-cta-back">
-          <a className="under mono-label" href="/">← Back to all work</a>
+      {/* 14. Next project */}
+      <section className="cs2-next">
+        <div className="cs2-next-head">
+          <span className="mono-label">[ Next case ]</span>
+          <span className="mono-label">{NEXT.idx}</span>
         </div>
+        <a className="cs2-next-card" href={NEXT.href}>
+          <div className="cs2-next-text">
+            <div className="mono-label">{NEXT.year} · {NEXT.client}</div>
+            <h2 className="cs2-next-title">
+              {NEXT.title}
+              <span className="cs2-next-arrow" aria-hidden="true">↗</span>
+            </h2>
+          </div>
+          <div className="cs2-next-image">
+            <img src={NEXT.image} alt={NEXT.title} loading="lazy" decoding="async" />
+          </div>
+        </a>
       </section>
 
       {/* footer */}

@@ -181,7 +181,7 @@ export function FeaturedProject() {
             zIndex: 1,
           }}>
             {SCREENS.map((s, i) => (
-              <img key={i} src={s.img} alt={s.label} style={{
+              <img key={i} src={s.img} alt={s.label} loading="lazy" decoding="async" style={{
                 position: 'absolute', inset: 0,
                 width: '100%', height: '100%',
                 objectFit: 'cover',

@@ -90,6 +90,7 @@ export function ServicesSection({ items }) {
                 fontSize: 36,
                 lineHeight: 1.2,
                 fontWeight: 400,
+                letterSpacing: '-0.02em',
                 color: active === i ? 'var(--ink)' : 'var(--muted)',
                 transition: 'color .25s',
               }}>{s.t}</span>
