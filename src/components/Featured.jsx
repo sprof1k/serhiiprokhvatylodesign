@@ -156,7 +156,7 @@ export function FeaturedProject() {
           zIndex: 1,
         }} />
 
-        {/* iPhone SVG mockup with real screens inside */}
+        {/* iPhone mockup — CSS bezel (renders identically across all browsers/WebViews) */}
         <div className="featured-phone" style={{
           position: 'relative',
           width: 320,
@@ -166,43 +166,49 @@ export function FeaturedProject() {
           transform: `translate3d(${mouse.x * 8}px, ${mouse.y * 5}px, 0)`,
           transition: 'transform .15s ease-out',
           filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.45))',
-          containerType: 'inline-size',
         }}>
-          {/* screen images masked to the screen area inside the bezel */}
+          {/* titanium bezel frame */}
           <div style={{
             position: 'absolute',
-            top: '2.293%',
-            left: '4.318%',
-            width: '91.364%',
-            height: '95.415%',
-            borderRadius: '12.95cqi',
-            overflow: 'hidden',
-            background: '#000',
+            inset: 0,
+            borderRadius: '13.6% / 6.55%',
+            background: 'linear-gradient(150deg, #4a4a4d 0%, #232325 26%, #1b1b1d 52%, #2d2d30 78%, #404043 100%)',
+            padding: '2.5%',
+            boxShadow: 'inset 0 0 0 1.5px rgba(255,255,255,0.10), inset 0 0 0 3px rgba(0,0,0,0.55)',
             zIndex: 1,
           }}>
-            {SCREENS.map((s, i) => (
-              <img key={i} src={s.img} alt={s.label} loading="lazy" decoding="async" style={{
-                position: 'absolute', inset: 0,
-                width: '100%', height: '100%',
-                objectFit: 'cover',
-                opacity: active === i ? 1 : 0,
-                transition: 'opacity .45s ease',
+            {/* screen */}
+            <div className="featured-phone-screen" style={{
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+              borderRadius: '11.4% / 5.45%',
+              overflow: 'hidden',
+              background: '#000',
+            }}>
+              {SCREENS.map((s, i) => (
+                <img key={i} src={s.img} alt={s.label} loading="lazy" decoding="async" style={{
+                  position: 'absolute', inset: 0,
+                  width: '100%', height: '100%',
+                  objectFit: 'cover',
+                  opacity: active === i ? 1 : 0,
+                  transition: 'opacity .45s ease',
+                }} />
+              ))}
+              {/* dynamic island */}
+              <div aria-hidden="true" style={{
+                position: 'absolute',
+                top: '1.7%',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '30%',
+                aspectRatio: '120 / 35',
+                background: '#000',
+                borderRadius: 999,
+                zIndex: 5,
               }} />
-            ))}
+            </div>
           </div>
-          {/* iPhone 17 Pro bezel overlay */}
-          <img
-            src="/assets/iphone-mockup.svg"
-            alt=""
-            aria-hidden="true"
-            style={{
-              position: 'absolute', inset: 0,
-              width: '100%', height: '100%',
-              pointerEvents: 'none',
-              zIndex: 2,
-              userSelect: 'none',
-            }}
-          />
         </div>
 
         {/* floating pills — desktop only (hidden on mobile via CSS) */}

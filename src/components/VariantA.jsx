@@ -156,10 +156,10 @@ I've collaborated with companies across the US and Europe — from AI startups a
           </div>
           <div className="footer-group footer-group-links">
             <div className="mono-label footer-group-label">Links</div>
-            <a className="footer-link" href="#">Resume<span aria-hidden="true">↗</span></a>
-            <a className="footer-link" href="#">Read.cv<span aria-hidden="true">↗</span></a>
-            <a className="footer-link" href="#">LinkedIn<span aria-hidden="true">↗</span></a>
-            <a className="footer-link" href="#">GitHub<span aria-hidden="true">↗</span></a>
+            <a className="footer-link" href="https://www.linkedin.com/in/sprokhvatilo/" target="_blank" rel="noopener">LinkedIn<span aria-hidden="true">↗</span></a>
+            <a className="footer-link" href="/assets/Serhii-Prokhvatylo-CV.pdf" target="_blank" rel="noopener">CV<span aria-hidden="true">↗</span></a>
+            <a className="footer-link" href="https://www.figma.com/design/uKOqQqj7zxHbcYaXwfn8Rh/Serhii-Prokhvatylo-%7C-Portfolio?node-id=2-71194&t=Vxne7jA8LGCoWhLn-1" target="_blank" rel="noopener">Figma Projects<span aria-hidden="true">↗</span></a>
+            <a className="footer-link" href="https://t.me/sprokhvatilo" target="_blank" rel="noopener">Telegram<span aria-hidden="true">↗</span></a>
           </div>
         </div>
         <div className="footer-bottom">

@@ -77,7 +77,9 @@ export function ExperienceSection({ items }) {
 
           <div style={{ marginTop: 32 }}>
             <a
-              href="#"
+              href="/assets/Serhii-Prokhvatylo-CV.pdf"
+              target="_blank"
+              rel="noopener"
               className="cv-button"
               style={{
                 display: 'inline-flex',
