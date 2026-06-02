@@ -1,7 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { CaseStudy } from './components/CaseStudy';
+import { MinimalCase } from './components/MinimalCase';
 import './styles.css';
+import './case-study.css';
 
 function CVButton() {
   return (
@@ -18,6 +19,6 @@ createRoot(document.getElementById('root')).render(
       <span /><span /><span /><span /><span />
     </div>
     <CVButton />
-    <div className="page"><CaseStudy /></div>
+    <div className="page"><MinimalCase /></div>
   </StrictMode>
 );

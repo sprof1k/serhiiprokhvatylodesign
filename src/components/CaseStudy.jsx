@@ -51,7 +51,7 @@ const NEXT = {
   year: '2024',
   client: 'SP Cars',
   title: 'Local taxi for Mukachevo, rebuilt from scratch',
-  image: '/assets/case-spcars.png',
+  image: 'assets/case-spcars.png',
   href: '#',
 };
 
@@ -79,7 +79,7 @@ export function CaseStudy() {
       <header className="site-header cs-header" style={{ position: 'sticky', top: 0, zIndex: 10, borderBottom: '1px solid var(--line)' }}>
         <div className="nav-row cs-nav-row">
           <div className="nav-status">
-            <a className="cs-back mono-label" href="/">
+            <a className="cs-back mono-label" href="index.html">
               <span aria-hidden="true">←</span> Back to work
             </a>
           </div>
@@ -124,7 +124,7 @@ export function CaseStudy() {
 
       {/* 2. Full-bleed showcase image */}
       <section className="cs2-fullbleed cs2-fullbleed--hero" aria-label="Vera Health flagship visual">
-        <img src="/assets/vera-1.png" alt="Vera Health — patient dashboard, full product view" loading="eager" decoding="async" />
+        <img src="assets/vera-1.png" alt="Vera Health — patient dashboard, full product view" loading="eager" decoding="async" />
       </section>
 
       {/* 3. Meta strip */}
@@ -194,7 +194,7 @@ export function CaseStudy() {
 
       {/* 6. Full-bleed image */}
       <section className="cs2-fullbleed" aria-label="Vera Health — reasoning and clinical calculator views">
-        <img src="/assets/vera-4.png" alt="Vera Health — clinical calculator and Discover feed" loading="lazy" decoding="async" />
+        <img src="assets/vera-4.png" alt="Vera Health — clinical calculator and Discover feed" loading="lazy" decoding="async" />
       </section>
 
       {/* 7. Goals */}
@@ -224,11 +224,11 @@ export function CaseStudy() {
       <section className="cs2-trio-section">
         <div className="cs-image-trio">
           <div className="cs-trio-left">
-            <img src="/assets/vera-2.png" alt="Vera Health home — patient dashboard" loading="lazy" decoding="async" />
+            <img src="assets/vera-2.png" alt="Vera Health home — patient dashboard" loading="lazy" decoding="async" />
           </div>
           <div className="cs-trio-right">
-            <img src="/assets/vera-3.png" alt="Vera Health reasoning view" loading="lazy" decoding="async" />
-            <img src="/assets/vera-5.png" alt="Vera Health flows across three devices" loading="lazy" decoding="async" />
+            <img src="assets/vera-3.png" alt="Vera Health reasoning view" loading="lazy" decoding="async" />
+            <img src="assets/vera-5.png" alt="Vera Health flows across three devices" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -278,7 +278,7 @@ export function CaseStudy() {
 
         <div className="cs-solution-split">
           <figure className="cs-solution-image">
-            <img src="/assets/vera-5.png" alt="Vera Health — reasoning view shown in-hand" loading="lazy" decoding="async" />
+            <img src="assets/vera-5.png" alt="Vera Health — reasoning view shown in-hand" loading="lazy" decoding="async" />
           </figure>
           <div className="cs-solution-copy">
             <h3 className="cs-sub-label">Reasoned, not generated</h3>
@@ -305,7 +305,7 @@ export function CaseStudy() {
 
       {/* 12. Full-bleed close */}
       <section className="cs2-fullbleed" aria-label="Vera Health — final product still">
-        <img src="/assets/vera-2.png" alt="Vera Health — final shipping product still" loading="lazy" decoding="async" />
+        <img src="assets/vera-2.png" alt="Vera Health — final shipping product still" loading="lazy" decoding="async" />
       </section>
 
       {/* 13. Outcome */}
@@ -370,7 +370,7 @@ export function CaseStudy() {
           <div className="footer-group footer-group-links">
             <div className="mono-label footer-group-label">Links</div>
             <a className="footer-link" href="https://www.linkedin.com/in/sprokhvatilo/" target="_blank" rel="noopener">LinkedIn<span aria-hidden="true">↗</span></a>
-            <a className="footer-link" href="/assets/Serhii-Prokhvatylo-CV.pdf" target="_blank" rel="noopener">CV<span aria-hidden="true">↗</span></a>
+            <a className="footer-link" href="assets/Serhii-Prokhvatylo-CV.pdf" target="_blank" rel="noopener">CV<span aria-hidden="true">↗</span></a>
             <a className="footer-link" href="https://www.figma.com/design/uKOqQqj7zxHbcYaXwfn8Rh/Serhii-Prokhvatylo-%7C-Portfolio?node-id=2-71194&t=Vxne7jA8LGCoWhLn-1" target="_blank" rel="noopener">Figma Projects<span aria-hidden="true">↗</span></a>
             <a className="footer-link" href="https://t.me/sprokhvatilo" target="_blank" rel="noopener">Telegram<span aria-hidden="true">↗</span></a>
           </div>

@@ -49,7 +49,7 @@ export function VariantA() {
 
       {/* hero */}
       <section className="hero-section" style={{ minHeight: '88vh', padding: '56px 32px 56px', borderBottom: '1px solid var(--line)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-        <ParallaxPortrait src="/assets/serhii-photo.jpg" scope={scrollRef} side="right" innerRef={portraitRef} />
+        <ParallaxPortrait src="assets/serhii-photo.jpg" scope={scrollRef} side="right" innerRef={portraitRef} />
         <FallingIcons scope={scrollRef} triggerRef={portraitRef} floorSelector=".marquee-section" />
         <div className="hero-text-group">
           <div className="mono-label hero-tag" style={{ marginBottom: 36 }}>{'/* portfolio · v.4 — '}{time}{' */'}</div>
@@ -70,11 +70,11 @@ export function VariantA() {
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, justifyContent: 'flex-end' }}>
             <div className="mono-label">{'// where to find me'}</div>
-            <div style={{ display: 'flex', gap: 24 }}>
-              <a className="under" href="#" style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>read.cv</a>
-              <a className="under" href="#" style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>linkedin</a>
-              <a className="under" href="#" style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>twitter / x</a>
-              <a className="under" href="#" style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>email →</a>
+            <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+              <a className="under" href="https://www.linkedin.com/in/sprokhvatilo/" target="_blank" rel="noopener" style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>linkedin</a>
+              <a className="under" href="https://www.figma.com/design/uKOqQqj7zxHbcYaXwfn8Rh/Serhii-Prokhvatylo-%7C-Portfolio?node-id=2-71194&t=Vxne7jA8LGCoWhLn-1" target="_blank" rel="noopener" style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>figma</a>
+              <a className="under" href="https://t.me/sprokhvatilo" target="_blank" rel="noopener" style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>telegram</a>
+              <a className="under" href="mailto:sprof1k20@gmail.com" style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>email →</a>
             </div>
           </div>
         </div>
@@ -101,17 +101,17 @@ export function VariantA() {
               <article
                 style={{ cursor: 'pointer', breakInside: 'avoid', marginBottom: 8, display: 'block' }}
                 data-cursor="open"
-                onClick={() => p.link && (window.location.href = p.link)}
               >
-                <Placeholder className="work-card-img" label={p.client} color={p.color} aspect="16/10" image={p.image} />
-                <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 16, alignItems: 'baseline', margin: '14px 0 18px' }}>
-                  <span className="mono-label">{p.id}</span>
-                  <div>
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, lineHeight: 1.25, fontWeight: 500, letterSpacing: '-0.01em' }}>{p.title}</div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 6 }}>{p.client} · {p.role}</div>
-                    <div className="mono-label" style={{ color: 'var(--accent)', marginTop: 8 }}>{p.metric}</div>
+                <a href={p.href || '#'} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+                  <Placeholder className="work-card-img" label={p.client} color={p.color} aspect="4/3" image={p.image} />
+                  <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 16, alignItems: 'baseline', margin: '14px 0 18px' }}>
+                    <span className="mono-label">{p.id}</span>
+                    <div>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, lineHeight: 1.25, fontWeight: 500, letterSpacing: '-0.01em' }}>{p.title}</div>
+                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 6 }}>{p.client} · {p.role}</div>
+                    </div>
                   </div>
-                </div>
+                </a>
               </article>
             </Reveal>
           ))}

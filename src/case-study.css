@@ -460,6 +460,56 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
+   CS Minimal — cover + shot grid
+   ═══════════════════════════════════════════════════════════ */
+
+.cs-min-cover-wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 8px 32px 0;
+}
+.cs-min-cover {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+}
+.cs-min-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cs-min-shots {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 48px 32px 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.cs-min-shot {
+  display: block;
+  width: 100%;
+  max-width: 1040px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 720px) {
+  .cs-min-cover-wrap { padding: 8px 16px 0; }
+  .cs-min-shots { padding: 32px 16px 64px; gap: 24px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
    CS2 — Editorial rebuild
    ═══════════════════════════════════════════════════════════ */
 

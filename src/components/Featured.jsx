@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 
 const SCREENS = [
-  { label: 'Home',           img: '/assets/screen-home.png' },
-  { label: 'Authentication', img: '/assets/screen-authentication.png' },
-  { label: 'Thinking',      img: '/assets/screen-thinking.png' },
-  { label: 'Result',        img: '/assets/screen-result.png' },
-  { label: 'References',    img: '/assets/screen-references.png' },
-  { label: 'Calculator',    img: '/assets/screen-calculator.png' },
-  { label: 'Setting Up',    img: '/assets/screen-setting-up.png' },
-  { label: 'Notifications', img: '/assets/screen-notifications.png' },
-  { label: 'New Device',    img: '/assets/screen-new-device.png' },
+  { label: 'Home',           img: 'assets/screen-home.png' },
+  { label: 'Authentication', img: 'assets/screen-authentication.png' },
+  { label: 'Thinking',      img: 'assets/screen-thinking.png' },
+  { label: 'Result',        img: 'assets/screen-result.png' },
+  { label: 'References',    img: 'assets/screen-references.png' },
+  { label: 'Calculator',    img: 'assets/screen-calculator.png' },
+  { label: 'Setting Up',    img: 'assets/screen-setting-up.png' },
+  { label: 'Notifications', img: 'assets/screen-notifications.png' },
+  { label: 'New Device',    img: 'assets/screen-new-device.png' },
 ];
 
 const PILL_LAYOUT = [
@@ -278,7 +278,7 @@ export function FeaturedProject() {
           My role spanned product strategy, IA, interaction design and the
           visual system — from first sketches to live shifts in three hospitals.
         </p>
-        <a href="/vera-health.html" className="under" style={{ display: 'inline-block', marginTop: 28, fontFamily: 'var(--font-mono)', fontSize: 13 }}>
+        <a href="vera-health.html" className="under" style={{ display: 'inline-block', marginTop: 28, fontFamily: 'var(--font-mono)', fontSize: 13 }}>
           Read the case study →
         </a>
       </div>
