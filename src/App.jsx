@@ -2,7 +2,7 @@ import { VariantA } from './components/VariantA';
 
 function CVButton() {
   return (
-    <a className="cv-fab" href="#" aria-label="Get full CV">
+    <a className="cv-fab" href="/assets/Serhii-Prokhvatylo-CV.pdf" target="_blank" rel="noopener" aria-label="Get full CV">
       <span className="cv-fab__label">Get Full CV</span>
       <span className="cv-fab__arrow" aria-hidden="true">↗</span>
     </a>
