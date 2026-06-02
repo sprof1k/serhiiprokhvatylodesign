@@ -54,16 +54,19 @@ export function VariantA() {
         <div className="hero-text-group">
           <div className="mono-label hero-tag" style={{ marginBottom: 36 }}>{'/* portfolio · v.4 — '}{time}{' */'}</div>
           <h1 className="hero-title" style={{ fontFamily: 'var(--font-display)', fontSize: 86, lineHeight: 0.96, letterSpacing: '-0.04em', fontWeight: 500, margin: '0 0 36px', maxWidth: 1100 }}>
-            Serhii Prokhvatylo —<br />{' '}
-            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, fontSize: '1.08em' }}>product designer</span> who treats AI<br />{' '}
-            like a partner, not a replacement.
+            Serhii Prokhvatylo is a{' '}
+            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, fontSize: '1.08em' }}>product designer</span>{' '}
+            who takes products from{' '}
+            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 400, fontSize: '1.08em', color: 'var(--accent)' }}>zero to shipped</span>{' '}
+            — solo or with a team.
           </h1>
         </div>
         <div className="hero-meta" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, maxWidth: 1100 }}>
           <p style={{ fontFamily: 'var(--font-serif)', fontSize: 19, lineHeight: 1.5, color: 'var(--ink-2)', margin: 0 }}>
             Six years designing products people actually use — from B2B
-            ops tooling to consumer fintech. Currently exploring how
-            generative interfaces change the texture of everyday software.
+            ops tooling to consumer fintech. Currently designing Vera Health,
+            an AI assistant for physicians — working through how generative
+            interfaces reshape everyday tools.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, justifyContent: 'flex-end' }}>
             <div className="mono-label">{'// where to find me'}</div>
