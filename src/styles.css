@@ -139,12 +139,12 @@ body {
   left: 3px;
   transition: transform .25s ease, background .25s ease;
 }
-/* Dark mode (aria-checked=false): thumb on LEFT (over moon icon) */
-.theme-switch[aria-checked="false"] .theme-switch__thumb { transform: translateX(0); }
-.theme-switch[aria-checked="false"] .theme-switch__icon--moon { color: var(--ink); }
-/* Light mode (aria-checked=true): thumb on RIGHT (over sun icon) */
-.theme-switch[aria-checked="true"] .theme-switch__thumb { transform: translateX(22px); }
+/* Light mode (aria-checked=true): thumb on LEFT (over sun icon) */
+.theme-switch[aria-checked="true"] .theme-switch__thumb { transform: translateX(0); }
 .theme-switch[aria-checked="true"] .theme-switch__icon--sun { color: var(--ink); }
+/* Dark mode (aria-checked=false): thumb on RIGHT (over moon icon) */
+.theme-switch[aria-checked="false"] .theme-switch__thumb { transform: translateX(22px); }
+.theme-switch[aria-checked="false"] .theme-switch__icon--moon { color: var(--ink); }
 [data-theme="light"] .theme-switch__thumb { background: #ffffff; }
 
 /* Experience section — transparent so grain shows through */
@@ -356,7 +356,7 @@ body {
   .theme-switch__track { width: 48px; height: 24px; }
   .theme-switch__icon { width: 18px; height: 18px; }
   .theme-switch__thumb { width: 18px; height: 18px; }
-  .theme-switch[aria-checked="true"] .theme-switch__thumb { transform: translateX(20px); }
+  .theme-switch[aria-checked="false"] .theme-switch__thumb { transform: translateX(20px); }
   .cv-fab { top: 10px; right: 12px; padding: 8px 12px; font-size: 10px; }
 
   .nav-row {
