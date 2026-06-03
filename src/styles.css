@@ -355,10 +355,16 @@ body {
   .cv-fab { top: 10px; right: 12px; padding: 8px 12px; font-size: 10px; }
 
   .nav-row {
-    grid-template-columns: 1fr auto !important;
+    grid-template-columns: 1fr !important;
     padding: 12px 16px !important;
-    padding-right: 100px !important;
     gap: 12px !important;
+    position: relative !important;
+  }
+  .nav-brand {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
   .nav-links { display: none !important; }
   .nav-status > div:first-child { display: none !important; }
@@ -400,7 +406,7 @@ body {
 
   .about-scroll-text { font-size: clamp(18px, 5.5vw, 26px) !important; }
 
-  .work-card-img { aspect-ratio: 4 / 5 !important; }
+  .work-card-img { aspect-ratio: 4 / 3 !important; }
   .services-section { padding: 56px 16px 64px !important; min-height: 0 !important; }
   .experience-section, .experience-section[style] { padding: 56px 16px !important; min-height: 0 !important; }
 

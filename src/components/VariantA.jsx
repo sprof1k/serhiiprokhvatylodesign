@@ -36,7 +36,7 @@ export function VariantA() {
             <span className="mono-label">Available · Q1 2026</span>
             <ThemeToggle />
           </div>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.04em' }}>SP / DESIGN</div>
+          <div className="nav-brand" style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.04em' }}>SP / DESIGN</div>
           <div className="nav-links" style={{ display: 'flex', justifyContent: 'flex-end', gap: 18 }}>
             {['Work', 'About', 'Notes', 'Contact'].map((l, i) => (
               <a key={l} href={'#' + l.toLowerCase()} className="mono-label" style={{ textDecoration: 'none' }}>
