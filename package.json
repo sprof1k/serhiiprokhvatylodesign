@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "npm run build && git branch -D gh-pages 2>/dev/null; git checkout --orphan gh-pages && git rm -rf . --quiet && cp -r dist/. . && rm -rf dist node_modules src public .github && git add -A && git commit --no-gpg-sign -m \"Deploy $(date -u +%Y-%m-%dT%H:%M:%SZ)\" && git push -f origin gh-pages && git checkout main && npm install",
     "lint": "eslint .",
     "preview": "vite preview"
   },
