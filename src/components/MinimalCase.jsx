@@ -1,5 +1,3 @@
-import { ThemeToggle } from './ThemeToggle';
-
 export function MinimalCase() {
   const C = window.__CASE__ || {};
   const images = C.images || [];
@@ -14,11 +12,10 @@ export function MinimalCase() {
     <div className="case-study cs2">
       <header className="site-header cs-header" style={{ position: 'sticky', top: 0, zIndex: 10, background: 'var(--bg)', borderBottom: '1px solid var(--line)' }}>
         <div className="nav-row cs-nav-row">
-          <div className="nav-status" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          <div className="nav-status">
             <a className="cs-back mono-label" href="./">
               <span aria-hidden="true">←</span> Back to work
             </a>
-            <ThemeToggle />
           </div>
           <div className="cs-brand">SP / DESIGN</div>
           <div className="nav-links cs-nav-meta">

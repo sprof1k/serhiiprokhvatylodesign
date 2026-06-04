@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 
 const SCREENS = [
-  { label: 'Home',           img: 'assets/screen-home.png' },
-  { label: 'Authentication', img: 'assets/screen-authentication.png' },
-  { label: 'Thinking',      img: 'assets/screen-thinking.png' },
-  { label: 'Result',        img: 'assets/screen-result.png' },
-  { label: 'References',    img: 'assets/screen-references.png' },
-  { label: 'Calculator',    img: 'assets/screen-calculator.png' },
-  { label: 'Setting Up',    img: 'assets/screen-setting-up.png' },
-  { label: 'Notifications', img: 'assets/screen-notifications.png' },
-  { label: 'New Device',    img: 'assets/screen-new-device.png' },
+  { label: 'Home',           img: 'assets/screen-home.webp' },
+  { label: 'Authentication', img: 'assets/screen-authentication.webp' },
+  { label: 'Thinking',      img: 'assets/screen-thinking.webp' },
+  { label: 'Result',        img: 'assets/screen-result.webp' },
+  { label: 'References',    img: 'assets/screen-references.webp' },
+  { label: 'Calculator',    img: 'assets/screen-calculator.webp' },
+  { label: 'Setting Up',    img: 'assets/screen-setting-up.webp' },
+  { label: 'Notifications', img: 'assets/screen-notifications.webp' },
+  { label: 'New Device',    img: 'assets/screen-new-device.webp' },
 ];
 
 const PILL_LAYOUT = [
