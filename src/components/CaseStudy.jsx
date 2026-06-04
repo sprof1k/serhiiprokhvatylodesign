@@ -124,7 +124,7 @@ export function CaseStudy() {
 
       {/* 2. Full-bleed showcase image */}
       <section className="cs2-fullbleed cs2-fullbleed--hero" aria-label="Vera Health flagship visual">
-        <img src="assets/vera-1.png" alt="Vera Health — patient dashboard, full product view" loading="eager" decoding="async" />
+        <img src="assets/vera-hero.webp" alt="Vera Health — clinical assistant, in hand" loading="eager" fetchpriority="high" decoding="async" />
       </section>
 
       {/* 3. Meta strip */}
@@ -194,7 +194,7 @@ export function CaseStudy() {
 
       {/* 6. Full-bleed image */}
       <section className="cs2-fullbleed" aria-label="Vera Health — reasoning and clinical calculator views">
-        <img src="assets/vera-4.png" alt="Vera Health — clinical calculator and Discover feed" loading="lazy" decoding="async" />
+        <img src="assets/vera-calc-discover.webp" alt="Vera Health — clinical calculator and Discover feed" loading="lazy" decoding="async" />
       </section>
 
       {/* 7. Goals */}
@@ -224,11 +224,11 @@ export function CaseStudy() {
       <section className="cs2-trio-section">
         <div className="cs-image-trio">
           <div className="cs-trio-left">
-            <img src="assets/vera-2.png" alt="Vera Health home — patient dashboard" loading="lazy" decoding="async" />
+            <img src="assets/vera-inhand.webp" alt="Vera Health home — patient dashboard" loading="lazy" decoding="async" />
           </div>
           <div className="cs-trio-right">
-            <img src="assets/vera-3.png" alt="Vera Health reasoning view" loading="lazy" decoding="async" />
-            <img src="assets/vera-5.png" alt="Vera Health flows across three devices" loading="lazy" decoding="async" />
+            <img src="assets/vera-twoscreens.webp" alt="Vera Health reasoning view" loading="lazy" decoding="async" />
+            <img src="assets/vera-home.webp" alt="Vera Health flows across three devices" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -278,7 +278,7 @@ export function CaseStudy() {
 
         <div className="cs-solution-split">
           <figure className="cs-solution-image">
-            <img src="assets/vera-5.png" alt="Vera Health — reasoning view shown in-hand" loading="lazy" decoding="async" />
+            <img src="assets/vera-home.webp" alt="Vera Health — reasoning view shown in-hand" loading="lazy" decoding="async" />
           </figure>
           <div className="cs-solution-copy">
             <h3 className="cs-sub-label">Reasoned, not generated</h3>
@@ -305,7 +305,7 @@ export function CaseStudy() {
 
       {/* 12. Full-bleed close */}
       <section className="cs2-fullbleed" aria-label="Vera Health — final product still">
-        <img src="assets/vera-2.png" alt="Vera Health — final shipping product still" loading="lazy" decoding="async" />
+        <img src="assets/vera-inhand.webp" alt="Vera Health — final shipping product still" loading="lazy" decoding="async" />
       </section>
 
       {/* 13. Outcome */}
