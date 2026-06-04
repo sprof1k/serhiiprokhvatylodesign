@@ -24,9 +24,9 @@
     width: '100%',
     height: '100%',
     pointerEvents: 'none',
-    zIndex: '9997',
+    zIndex: '0',
     opacity: String(OPACITY),
-    mixBlendMode: 'overlay',
+    mixBlendMode: 'normal',
   });
   // Insert it just before </body> once body is ready
   function attach() {
